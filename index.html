@@ -1,20 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Plantilla Agenda Online</title>
 
-        <link
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-            rel="stylesheet"
-            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-            crossorigin="anonymous"
-        />
-        <link rel="stylesheet" href="/src/css/styles.css" />
-    </head>
-    <body>
-        <script src="/src/js/index.js"></script>
-    </body>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Plantilla Agenda Online</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <link rel="stylesheet" href="/src/css/styles.css" />
+</head>
+
+<body>
+    <main class="container-sm">
+        <h1>Plantilla Agenda Online</h1>
+
+        <form class="row g-3">
+            <div class="col-md-2">
+                <div class="btn-group-vertical btn-group" role="group" aria-label="Basic radio toggle button group">
+                    <input type="radio" class="btn-check tipo-agenda-check" name="tipo-agenda" id="con-afectacion"
+                        autocomplete="off" value="CON AFECTACION" checked />
+                    <label class="btn btn-outline-primary" for="con-afectacion">CON AFECTACION</label>
+
+                    <input type="radio" class="btn-check tipo-agenda-check" name="tipo-agenda" id="sin-afectacion"
+                        autocomplete="off" value="SIN AFECTACION" />
+                    <label class="btn btn-outline-primary" for="sin-afectacion">SIN AFECTACION</label>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <select class="form-select" multiple aria-label="multiple select example">
+                    <option selected>Open this select menu</option>
+                    <option value="ACOMETIDA">ACOMETIDA</option>
+                    <option value="BOCA CM">BOCA CM</option>
+                    <option value="BOCA CATV">BOCA CATV</option>
+                    <option value="COMPLETA">COMPLETA</option>
+                    <option value="INSTALAR AMPLI DOMICILIARIO">
+                        INSTALAR AMPLI DOMICILIARIO
+                    </option>
+                    <option value="BOCA CM POR CAMBIO DE LUGAR">
+                        BOCA CM POR CAMBIO DE LUGAR
+                    </option>
+                </select>
+            </div>
+
+            <div class="col-md-2">
+                <div class="btn-group btn-group-vertical" role="group" aria-label="Basic radio toggle button group">
+                    <input type="radio" class="btn-check tipo-agenda-check" name="tipo-trabajo" id="tipo-interior"
+                        autocomplete="off" value="INTERIOR" checked />
+                    <label class="btn btn-outline-primary" for="tipo-interior">INTERIOR</label>
+
+                    <input type="radio" class="btn-check tipo-agenda-check" name="tipo-trabajo" id="tipo-exterior"
+                        autocomplete="off" value="EXTERIOR" />
+                    <label class="btn btn-outline-primary" for="tipo-exterior">EXTERIOR</label>
+                </div>
+            </div>
+
+            <div class="col-md-2">
+                <label for="tecnico" class="form-label">Técnico solicitante</label>
+                <input type="text" class="form-control" id="tecnico" placeholder="00XXX000" />
+            </div>
+
+            <div class="col-md-2">
+                <label for="metros" class="form-label">Metros de Cableado</label>
+                <input type="text" class="form-control" id="metros" placeholder="99" />
+            </div>
+
+            <div class="col-md-6">
+                <label for="observacion" class="form-label">Observacion adicional (Opcional)</label>
+                <input type="text" class="form-control" id="observacion"
+                    placeholder="EJEMPLO: ES POR CAÑERIA ; 15 INTERIOR 30 EXTERIOR, ETC ..." />
+            </div>
+
+            <div class="col-md-2">
+                <label for="dupla" class="mb-2">¿ DUPLA? </label>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="dupla" value="DUPLA" />
+                    <label class="form-check-label" for="dupla">
+                        AFIRMA
+                    </label>
+                </div>
+            </div>
+
+            <!-- Terminado hasta aqui -->
+
+            <div class="input-append date col-md-6 m-auto" id="dp3" data-date="12-02-2012" data-date-format="dd-mm-yyyy">
+                <input class="span2" size="16" type="text" id="datePicker" placeholder="12-12"/>
+
+            </div>
+
+            <div class="btn-group-vertical btn-group col-md-6" role="group"
+                aria-label="Basic radio toggle button group">
+                <input type="radio" class="btn-check banda-check" name="banda" id="tm" autocomplete="off"
+                    value="8 A 14HS" checked />
+                <label class="btn btn-outline-primary" for="tm">TURNO MAÑANA</label>
+
+                <input type="radio" class="btn-check banda-check" name="banda" id="tt" autocomplete="off"
+                    value="13 A 18HS" />
+                <label class="btn btn-outline-primary" for="tt">TURNO TARDE</label>
+
+                <input type="radio" class="btn-check banda-check" name="banda" id="tt" autocomplete="off"
+                    value="8 A 17HS" />
+                <label class="btn btn-outline-primary" for="tt">TURNO EXTENDIDO</label>
+            </div>
+
+            <div class="col-12">
+                <button type="submit" class="btn btn-primary">
+                    OBTENER COMENTARIO AGENDA
+                </button>
+            </div>
+        </form>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/litepicker/2.0.11/litepicker.js"></script>
+    <script src="/src/js/index.js"></script>
+    <script src="/src/js/datePicker.js"></script>
+</body>
+
 </html>
