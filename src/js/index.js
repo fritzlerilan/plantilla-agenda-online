@@ -23,7 +23,7 @@ formulario.addEventListener("submit", async (e) => {
         }
     });
     
-    const {afectacion, agenda, banda, dupla, metros, observacion, reinstalar, tecnico, trabajo, ot } = objeto;
+    const {afectacion, agenda, banda, dupla, metros, observacion, reinstalar, tecnico, trabajo, ot } = datos;
 
     const fechaActual = new Date();
     const diaActual = fechaActual.getDate();
