@@ -27,7 +27,7 @@ formulario.addEventListener("submit", async (e) => {
 
     const fechaActual = new Date();
     const diaActual = fechaActual.getDate();
-    const mesActual = fechaActual.getMonth();
+    const mesActual = fechaActual.getMonth() + 1;
     const horaActual = fechaActual.getHours();
     const minutoActual = fechaActual.getMinutes();
 
