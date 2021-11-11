@@ -14,24 +14,23 @@
 
 <body>
     <main class="container-sm">
-        <h1>Plantilla Agenda Online</h1>
+        <h1 class="mt-2">Plantilla Agenda Online</h1>
 
-        <form class="row g-3">
+        <form class="row g-3" id="formulario">
             <div class="col-md-2">
                 <div class="btn-group-vertical btn-group" role="group" aria-label="Basic radio toggle button group">
-                    <input type="radio" class="btn-check tipo-agenda-check" name="tipo-agenda" id="con-afectacion"
+                    <input type="radio" class="btn-check afectacion-check" name="afectacion" id="con-afectacion"
                         autocomplete="off" value="CON AFECTACION" checked />
                     <label class="btn btn-outline-primary" for="con-afectacion">CON AFECTACION</label>
 
-                    <input type="radio" class="btn-check tipo-agenda-check" name="tipo-agenda" id="sin-afectacion"
+                    <input type="radio" class="btn-check afectacion-check" name="afectacion" id="sin-afectacion"
                         autocomplete="off" value="SIN AFECTACION" />
                     <label class="btn btn-outline-primary" for="sin-afectacion">SIN AFECTACION</label>
                 </div>
             </div>
             <div class="col-md-8">
-                <select class="form-select" multiple aria-label="multiple select example">
-                    <option selected>Open this select menu</option>
-                    <option value="ACOMETIDA">ACOMETIDA</option>
+                <select class="form-select" multiple aria-label="multiple select example" name="reinstalar">
+                    <option value="ACOMETIDA" selected>ACOMETIDA</option>
                     <option value="BOCA CM">BOCA CM</option>
                     <option value="BOCA CATV">BOCA CATV</option>
                     <option value="COMPLETA">COMPLETA</option>
@@ -46,36 +45,36 @@
 
             <div class="col-md-2">
                 <div class="btn-group btn-group-vertical" role="group" aria-label="Basic radio toggle button group">
-                    <input type="radio" class="btn-check tipo-agenda-check" name="tipo-trabajo" id="tipo-interior"
-                        autocomplete="off" value="INTERIOR" checked />
+                    <input type="radio" class="btn-check trabajo-check form-control" name="trabajo" id="tipo-interior"
+                        autocomplete="off" value="INTERIOR" />
                     <label class="btn btn-outline-primary" for="tipo-interior">INTERIOR</label>
 
-                    <input type="radio" class="btn-check tipo-agenda-check" name="tipo-trabajo" id="tipo-exterior"
-                        autocomplete="off" value="EXTERIOR" />
+                    <input type="radio" class="btn-check trabajo-check form-control" name="trabajo" id="tipo-exterior"
+                        autocomplete="off" value="EXTERIOR" checked />
                     <label class="btn btn-outline-primary" for="tipo-exterior">EXTERIOR</label>
                 </div>
             </div>
 
             <div class="col-md-2">
                 <label for="tecnico" class="form-label">Técnico solicitante</label>
-                <input type="text" class="form-control" id="tecnico" placeholder="00XXX000" />
+                <input type="text" class="form-control" id="tecnico" placeholder="00XXX000" name="tecnico" />
             </div>
 
             <div class="col-md-2">
                 <label for="metros" class="form-label">Metros de Cableado</label>
-                <input type="text" class="form-control" id="metros" placeholder="99" />
+                <input type="text" class="form-control" id="metros" placeholder="99" name="metros" />
             </div>
 
             <div class="col-md-6">
                 <label for="observacion" class="form-label">Observacion adicional (Opcional)</label>
-                <input type="text" class="form-control" id="observacion"
+                <input name="observacion" type="text" class="form-control" id="observacion"
                     placeholder="EJEMPLO: ES POR CAÑERIA ; 15 INTERIOR 30 EXTERIOR, ETC ..." />
             </div>
 
             <div class="col-md-2">
                 <label for="dupla" class="mb-2">¿ DUPLA? </label>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="dupla" value="DUPLA" />
+                <div class="form-check form-control">
+                    <input class="form-check-input" type="checkbox" id="dupla" value="PARA DUPLA" name="dupla" />
                     <label class="form-check-label" for="dupla">
                         AFIRMA
                     </label>
@@ -84,29 +83,39 @@
 
             <!-- Terminado hasta aqui -->
 
-            <div class="input-append date col-md-6 m-auto" id="dp3" data-date="12-02-2012" data-date-format="dd-mm-yyyy">
-                <input class="span2" size="16" type="text" id="datePicker" placeholder="12-12"/>
 
+            <div class="input-append date col-md-4 mt-5" id="dp3">
+                <input class="span2 form-control" size="16" type="text" id="datePicker" placeholder="12-12"
+                    name="agenda" />
+            </div>
+
+            <div class="col-md-2">
+                <label for="tecnico" class="form-label">OT</label>
+                <input type="text" class="form-control" id="ot" placeholder="640000000" name="ot" />
             </div>
 
             <div class="btn-group-vertical btn-group col-md-6" role="group"
                 aria-label="Basic radio toggle button group">
-                <input type="radio" class="btn-check banda-check" name="banda" id="tm" autocomplete="off"
-                    value="8 A 14HS" checked />
+                <input type="radio" class="btn-check banda-check form-control" name="banda" id="tm" autocomplete="off"
+                    name="banda" value="8 A 14HS" checked />
                 <label class="btn btn-outline-primary" for="tm">TURNO MAÑANA</label>
 
-                <input type="radio" class="btn-check banda-check" name="banda" id="tt" autocomplete="off"
-                    value="13 A 18HS" />
+                <input type="radio" class="btn-check banda-check form-control" name="banda" id="tt" autocomplete="off"
+                    name="banda" value="13 A 18HS" />
                 <label class="btn btn-outline-primary" for="tt">TURNO TARDE</label>
 
-                <input type="radio" class="btn-check banda-check" name="banda" id="tt" autocomplete="off"
-                    value="8 A 17HS" />
-                <label class="btn btn-outline-primary" for="tt">TURNO EXTENDIDO</label>
+                <input type="radio" class="btn-check banda-check form-control" name="banda" id="te" autocomplete="off"
+                    name="banda" value="8 A 17HS" />
+                <label class="btn btn-outline-primary" for="te">TURNO EXTENDIDO</label>
             </div>
 
+
             <div class="col-12">
-                <button type="submit" class="btn btn-primary">
+                <button type="submit" class="btn btn-danger">
                     OBTENER COMENTARIO AGENDA
+                </button>
+                <button class="btn btn-warning reset">
+                    REINICIAR FORMULARIO
                 </button>
             </div>
         </form>
